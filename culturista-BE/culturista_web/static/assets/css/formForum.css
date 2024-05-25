@@ -1,0 +1,73 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to top right, #6E45E2, #88D3CE);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 20px;
+}
+
+.form-container h2 {
+    margin-top: 0;
+    color: transparent; 
+    text-align: center;
+    background: linear-gradient(to top right, #6E45E2, #88D3CE); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #6E45E2;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    height: 200px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,255 @@
+/*file có các phần dùng chung*/
+
+.btn__primary {
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: transparent;
+    margin: 4px;
+} /*đây là button dùng chung*/
+
+.btn__primary a {
+    color: #000;
+    font-weight: 500;
+}
+
+.btn__primary:hover {
+    background-color: #000;
+}
+
+.btn__primary:hover a {
+    color: #fff;
+} 
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Common colors */
+:root {
+    --text-color: #333;
+    --white-color: #fff;
+    --black--color: #000;
+}
+
+/* Navbar */
+#header {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    z-index: 4;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Sticky Navbar */
+header.sticky {
+    background: #000;
+    opacity: 0.9;
+}
+
+header.sticky #main-menu a,
+header.sticky #logo,
+header.sticky #user-account__name {
+    color: #fff;
+}
+
+header.sticky #logo {
+    text-shadow: 2px 2px 4px rgba(240, 234, 234, 0.6);
+}
+
+header.sticky .user-menu__item {
+    background-color: #000;
+}
+
+/* Navbar Items */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head-container {
+    margin: 0px auto;
+    max-width: 1200px;
+}
+
+.inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+ul#main-menu {
+    display: flex;
+}
+
+ul#main-menu a {
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+#logo {
+    font-weight: 800;
+    color: #000;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* User Account */
+#user-account {
+    cursor: pointer;
+    display: flex;
+}
+
+#user-account__avt {
+    width: 26px;
+    height: 26px;
+    margin-left: 10px;
+}
+
+#user-account__name {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    padding-left: 8px;
+    position: relative;
+}
+
+/* User Menu */
+.user-menu {
+    position: absolute;
+    padding-left: 0;
+    top: 90%;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.user-menu__item {
+    padding: 10px 4px;
+}
+
+.user-menu__item a {
+    z-index: 4;
+}
+
+.user-menu__item a:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.user-menu__item a:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.user-menu__item:hover {
+    background-color: #cecccc;
+}
+
+.user-menu::before {
+    content: "";
+    z-index: -1;
+    border-width: 20px 27px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    right: 4px;
+    top: -38%;
+}
+
+.user-menu::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    top: -25%;
+}
+
+#user-account:hover .user-menu {
+    display: block;
+}
+
+/* Responsive Navbar */
+#menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+#menu-toggle i {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+@media only screen and (max-width: 46.1875em) {
+    .inner-header {
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .user-menu li{
+        padding: 0;
+    }
+    #header {
+        width: 100%;
+        position: absolute;
+    }
+
+    #menu-toggle {
+        display: block;
+        z-index: 10;
+    }
+
+    .menu-icon{
+        margin-left: 20px;
+    }
+
+    #user-account__avt {
+        display: none;
+    }
+
+    ul#main-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    ul#main-menu a,
+    ul#main-menu span {
+        padding: 10px;
+        display: inline-block;
+    }
+
+    ul#main-menu.show {
+        display: flex;
+    }
+
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'assets/javascript/register.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/SignUp-In.css' %}">
+    <title>Register</title>
+</head>
+
+<body>
+    <section class="slider">
+        <div class="slider-wrap">
+            <div class="slider__left">
+                <h1 class="slider__name">Culturista</h1>
+                <img src="{% static 'assets/img/sign.png' %}" alt="" class="slider__img">
+            </div>
+
+            <div class="slider__right">
+                <div class="container">
+                    <h2 class="head">Sign up</h2>
+                    <form onsubmit="register()">
+
+                        <div class="name">
+                            <div class="name--item">
+                                <p class="text">First name</p>
+                                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" require>
+                            </div>
+    
+                            <div class="name--item">
+                                <p class="text">Last name</p>
+                                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" require>
+                            </div>
+                        </div>
+    
+                        <div class="username">
+                            <p class="text">Username</p>
+                            <input type="text" id="username" name="username" placeholder="Enter your username" require>
+                        </div>
+
+                        <div class="email">
+                            <p class="text">Email address</p>
+                            <input type="text" id="email" name="email" placeholder="Enter your email address" require>
+                        </div>
+    
+                        <div class="password">
+                            <p class="text">Password</p>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="name">
+                            <div class="name--item">
+                                <p class="text">Gender</p>
+                                <select id="gender" name="gender">
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Other</option>
+                                </select>
+                            </div>
+    
+                            <div class="name--item">
+                                <p class="text">Country</p>
+                                <select id="country" name="country">
+                                    <option value="VN">Vietnam</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <!-- <p class="text remind">Use 8 or more characters with a mix of letters, numbers & symbols</p> -->
+    
+                        <!-- <div class="agree">
+                            <input type="checkbox" id="acceptTerms" name="acceptTerms" required&gt>
+                            <p class="text "> I agree to our</p>
+                            <a href="" class="link">Terms of use</a>
+                            <p class="text">and</p>
+                            <a href="" class="link">Privacy Policy</a>
+                        </div> -->
+    
+                        <div class="btn-wrap">
+                            <button class="btn" type="button" onclick="register()">Sign up</button>
+    
+                            <p class="text">Already have an ccount?</p>
+                            <a href="{% url 'login' %}" class="link">Log in</a>
+                        </div>
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

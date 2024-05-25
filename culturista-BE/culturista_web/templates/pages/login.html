@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/SignUp-In.css' %}">
+    <script src="{% static 'assets/javascript/login.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="slider">
+        <div class="slider-wrap">
+            <div class="slider__left">
+                <h1 class="slider__name">Culturista</h1>
+                <img src="{% static 'assets/img/sign.png' %}" alt="" class="slider__img">
+            </div>
+
+            <div class="slider__right">
+                <div class="container">
+                    <h2 class="head">Sign in</h2>
+                    <form>
+
+                        <div class="address">
+                            <p class="text">Username</p>
+                            <input type="text" id="username" name="Username" placeholder="Enter your username" require>
+                        </div>
+    
+                        <div class="address">
+                            <p class="text">Password</p>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+    
+                        <p class="text remind">Forgot password?</p>
+    
+                        <div class="btn-wrap">
+                            <button class="btn" type="button" onclick="login()">Sign in</button>
+    
+                            <p class="text">Create new account?</p>
+                            <a href="{% url 'register' %}" class="link">Sign up</a>
+                        </div>
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

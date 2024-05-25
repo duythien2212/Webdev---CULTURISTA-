@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/Homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/font/fontawesome-free-6.5.2/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+    <script src="{% static 'assets/javascript/script.js' %}"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    
+    <title>Culturista</title>
+</head>
+<body onload="checkLogin()">
+    <main id="main">
+        <!--Navbar-->
+        <header id="header">
+            <div class="inner-header head-container">
+                <a href="{% url 'index' %}" id="logo">Culturista</a>
+                <nav>
+                    <div id="menu-toggle">
+                        <i class="menu-icon fas fa-bars"></i>
+                    </div> 
+
+                    <ul id="main-menu">
+                        <li><a href="{% url 'findRoom' %}">Play</a></li>
+                        <li><a href="{% url 'findForum' %}">Forum</a></li>
+                        <li><a href="{% url 'chat' %}">Chat</a></li>
+
+                        <!--Trường hợp người dùng chưa đăng nhập thì dùng 2 dòng này-->
+                        <li id="signIn"><a href="{% url 'login' %}">Sign in</a></li>
+                        <li id="signUp"><a href="{% url 'register' %}">Sign up</a></li>
+    
+                        <!--Trường hợp người dùng đã đăng nhập-->
+                        <li id="user-account">
+                            <img src="{% static 'assets/img/user-account.png' %}" alt="" id="user-account__avt">
+                            <span id="user-account__name">Username</span>
+    
+                            <ul class="user-menu">
+                                <li class="user-menu__item">
+                                    <a href="{% url 'profile' %}">My account</a>
+                                </li>
+                                <li class="user-menu__item">
+                                    <a onclick="logout()">Log out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+       <!--slider-->
+       <section class="slider">
+            <!--slider first page-->
+            <section id="slider__overview">
+                <div class="slider__3d">
+                    <div class="parallax">
+                        <div style="background-image: url({% static 'assets/img/slider.jpg' %});" class="slider__bg">
+                            
+                        </div>
+                        <div class="slider__content">
+                            <h1 class="slider__h1">Play is fun!</h1>
+                            <h2 class="slider__h2">cultural connection and exchange</h2>
+                            
+                            <div class="slider__btn">
+                                <button class="btn__primary slider__btn--item">
+                                    <a href="{% url 'findRoom' %}">Join Team</a>
+                                </button>
+                                <button class="btn__primary slider__btn--item">
+                                    <a href="{% url 'findRoom' %}">Play game</a>
+                                </button>
+                            </div>
+                        </div>
+                        <img src="{% static 'assets/img/slider_left.png' %}" alt="" class="slider__img--left">
+                        <img src="{% static 'assets/img/slider_right.png' %}" alt="" class="slider__img--right">
+                    </div>
+                </div>
+            </section>
+
+            <!--slider block list-->
+            <section class="block-list">
+                <div style="background-image: url({% static 'assets/img/block1.jpg' %});" class="block-item">
+                        <p class="block-item__text">
+                            Playing game with other people 
+                        </p>
+                </div>
+
+                <div style="background-image: url({% static 'assets/img/block2.jpg' %});" class="block-item">
+                        <p class="block-item__text">
+                            Use money to change outfits
+                        </p>
+                </div>
+
+                <div style="background-image: url({% static 'assets/img/block3.jpg' %});" class="block-item">
+                        <p class="block-item__text">
+                            Discuss your field of study
+                        </p>
+                    </div>
+
+                    <div style="background-image: url({% static 'assets/img/block4.jpg' %});" class="block-item">
+                        <p class="block-item__text">
+                            Chat with other people
+                        </p>
+                    </div>
+                
+            </section>
+
+       </section>
+
+       <section class="content">
+            <!--content introduction-->
+            <section class="introdution">
+                <div class="introdution__container">
+                    <div class="introduction__text">
+                        <p class="introduction__text--header">introduction</p>
+                        <h1 class="introduction__text--h1">A place to improve your language, communication and cultural skills</h1>
+                        <p class="introduction__text--text">CULTURISTA has an open community where people can share knowledge, experiences, and support each other in the learning and cultural integration process.</p>
+
+                        <div class="introduction__btn">
+                            <button class="btn__primary introduction__btn--item">
+                                <a href="{% url 'chat' %}">Chat with team</a>
+                            </button>
+                            <button class="btn__primary introduction__btn--item">
+                                <a href="{% url 'chat' %}">Chat with friend</a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="background-image: url({% static 'assets/img/introdution__img.jpg' %});" class="introduction__img"></div>
+
+                </div>
+            </section>
+
+            <!--content about us-->
+            <section class="about-us">
+                <div class="about-us__container">
+                    <p class="about-us__head">About us</p>
+                    
+
+                    <div class="about-us__wrap">
+                    
+                        <p class="about-us__nameGr">Allstardev</p>
+
+                        <div class="gallery-wrap">
+                            <img src="{% static 'assets/img/back.png' %}" alt="" id="backBtn">
+                            <div class="gallery">
+                                <div>
+                                    <span class="gallery__item">
+                                        <img src="" class="gallery__img">
+                                    </span>
+                                    <span class="gallery__item"><img src="{% static 'assets/img/DuyThien.jpg' %}" class="gallery__img"></span>
+                                    <span class="gallery__item"><img src="{% static 'assets/img/DuyThien.jpg' %}" class="gallery__img"></span>
+                                </div>
+                        
+                                <div>
+                                    <span class="gallery__item"><img src="{% static 'assets/img/DuyThien.jpg' %}" class="gallery__img"></span>
+                                    <span class="gallery__item"><img src="{% static 'assets/img/DuyThien.jpg' %}" class="gallery__img"></span>
+                                    <span class="gallery__item"><img src="{% static 'assets/img/DuyThien.jpg' %}" class="gallery__img"></span>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/img/next.svg' %}" alt="" id="nextBtn">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+       </section>
+
+       <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__list">
+                    <div class="footer__item item__long">
+                        <h2 class="footer__head">Contact</h2>
+                        <p class="footer__text">Email: 22521392@gm.uit.edu.vn</p>
+                        <p class="footer__text">Phone: 099 9999 9999</p>
+                        <p class="footer__text">Address: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh</p>
+                    </div>
+
+                    <div class="footer__item item__short1">
+                        <ul class="footer__link">
+                            <li><h2 class="footer__head">Navigation</h2></li>
+                        
+                            <li class="footer__link--item">
+                                <a href="{% url 'findRoom' %}" class="footer__text--link">Play</a>
+                            </li>
+                            <li class="footer__link--item">
+                                <a href="{% url 'profile' %}" class="footer__text--link">Closet</a>
+                            </li>
+                            <li class="footer__link--item">
+                                <a href="{% url 'findForum' %}" class="footer__text--link">Forum</a>
+                            </li>
+                            <li class="footer__link--item">
+                                <a href="{% url 'chat' %}" class="footer__text--link">Chat</a>
+                            </li>
+                        </ul>   
+                       
+                    </div>
+        
+                    <div class="footer__item item__short2">
+                        <ul class="footer__link">
+                            <li><h2 class="footer__head">Social network</h2></li>
+                            <li class="footer__link--item">
+                                <a href="" class="footer__text--link">
+                                    <i class="footer__text--icon fa-brands fa-facebook"></i>
+                                    <span class="footer__text--name">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="footer__link--item">
+                                <a href="" class="footer__text--link">
+                                    <i class="footer__text--icon fa-brands fa-instagram"></i>
+                                    <span class="footer__text--name">Instagram</span>
+                                </a>
+                            </li>
+                            <li class="footer__link--item">
+                                <a href="" class="footer__text--link">
+                                    <i class="footer__text--icon fa-brands fa-github"></i>
+                                    <span class="footer__text--name">Github</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="footer__license">© Bản quyền thuộc AllStarDev</p>
+            </div>
+       </footer>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="{% static 'assets/javascript/javascript.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+body {
+    background: linear-gradient(to top right, #6E45E2, #88D3CE);
+    width: 100%;
+    min-height: 720px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.title {
+    padding: 10px;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    width: 90%;
+    max-width: 800px;
+}
+
+.content {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.forum-info {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+   
+}
+
+.forum-info div {
+    text-align: center;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.forum-info h3 {
+    text-align: left;
+}
+
+.user-avatar {
+    width: 26px;
+    height: 26px;
+    margin: 0 10px;
+}
+
+.forum-info li {
+    margin: 0;
+}
+
+.user-info-txt {
+    cursor: pointer;
+    display: flex;
+}
+
+.comment-input {
+    display: flex;
+    width: 100%;
+}
+
+.submit-comment {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.submit-comment textarea {
+    background-color: #F0F0F0;
+    border-radius: 30px;
+    border: none;
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+}
+
+.submit-comment button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.send-btn img {
+    width: 26px;
+    height: 26px;
+}
+
+.reply-comment {
+    overflow: auto;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.reply-comment div {
+    background-color: #F0F0F0;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+}
+
+.relate-topic {
+    text-align: left;
+    width: 100%;
+}
+
+.relate-topic th {
+    font-weight: bold;
+    padding: 3px;
+}
+
+.relate-topic td {
+    padding: 3px;
+}
+
+.relate-topic tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .title {
+        padding: 30px 10px;
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 20px;
+        margin: 10px 5%;
+        width: 90%;
+    }
+
+    .forum-info {
+        align-items: flex-start;
+    }
+
+    .comment-input {
+        flex-direction: column;
+    }
+
+    .submit-comment {
+        width: 100%;
+    }
+}

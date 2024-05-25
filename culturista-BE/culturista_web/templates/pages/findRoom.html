@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culturista</title>
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/formForum.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/font/fontawesome-free-6.5.2/css/all.min.css' %}">
+    <script src="{% static 'assets/javascript/script.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'assets/javascript/findRoom.js' %}"></script>
+
+</head>
+
+<body onload="checkLogin()">
+    <header id="header">
+        <div class="inner-header head-container">
+            <a href="{% url 'index' %}" id="logo">Culturista</a>
+            <nav>
+                <div id="menu-toggle">
+                    <i class="menu-icon fas fa-bars"></i>
+                </div> 
+
+                <ul id="main-menu">
+                    <li><a href="{% url 'findRoom' %}">Play</a></li>
+                    <li><a href="{% url 'findForum' %}">Forum</a></li>
+                    <li><a href="{% url 'chat' %}">Chat</a></li>
+
+                    <!--Trường hợp người dùng chưa đăng nhập thì dùng 2 dòng này-->
+                    <li id="signIn"><a href="{% url 'login' %}">Sign in</a></li>
+                    <li id="signUp"><a href="{% url 'register' %}">Sign up</a></li>
+
+                    <!--Trường hợp người dùng đã đăng nhập-->
+                    <li id="user-account">
+                        <img src="{% static 'assets/img/user-account.png' %}" alt="" id="user-account__avt">
+                        <span id="user-account__name">Username</span>
+
+                        <ul class="user-menu">
+                            <li class="user-menu__item">
+                                <a href="{% url 'profile' %}">My account</a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a onclick="logout()">Log out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <h2>Find room</h2>
+        <div class="form-group">
+            <label for="roomID">Title</label>
+            <input type="text" id="roomID" name="roomID" placeholder="Enter your room ID" required>
+        </div> 
+        
+        <div class="form-group" style="display: flex; justify-content: space-around;">
+            <button type="button" onclick="createRoom()" style="width: 30%;">Create</button>
+            <button type="button" onclick="findRoom()" style="width: 30%;">Find</button>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="{% static 'assets/javascript/javascript.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.menu-icon').addEventListener('click', function() {
+                document.querySelector('#main-menu').classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

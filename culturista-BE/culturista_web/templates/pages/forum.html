@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/Homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/font/fontawesome-free-6.5.2/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/forum.css' %}">
+    <title>Forum</title>
+</head>
+<body>
+<main id="main">
+    <!--Navbar-->
+    <header id="header">
+        <div class="inner-header container">
+            <a href="{% url 'index' %}" id="logo">Culturista</a>
+            <nav>
+                <ul id="main-menu">
+                    <li><a href="{% url 'findRoom' %}">Play</a></li>
+                    <li><a href="{% url 'findForum' %}">Forum</a></li>
+                    <li><a href="{% url 'chat' %}">Chat</a></li>
+                    <!--Trường hợp người dùng chưa đăng nhập thì dùng 2 dòng này-->
+                    <!-- <li><a href="">Sign in</a></li>
+                    <li><a href="">Sign up</a></li> -->
+
+                    <!--Trường hợp người dùng đã đăng nhập-->
+                    <li id="user-account">
+                        <img src="{% static 'assets/img/user-account.png' %}" alt="" id="user-account__avt">
+                        <span id="user-account__name">Username</span>
+
+                        <ul class="user-menu">
+                            <li class="user-menu__item">
+                                <a href="{% url 'profile' %}">My account</a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="">Log out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <h1 class="title">{{title}}</h1>
+        <div class="card">
+            <p>{{content}}</p>
+            <br>
+
+            <ul class="forum-info">
+                <li class="user-info">
+                    <div>
+                        <h3>Create by:</h3>
+                        <a class="user-info">
+                            <img src="{% static 'assets/img/user-account.png' %}" alt="avatar" class="user-avatar">
+                            <span>User Name</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Replies</h3>
+                        <p>{{replies}}</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 style="margin-bottom: 10px">Comment</h2>
+            <div class="comment-input">
+                <img src="{% static 'assets/img/user-account.png' %}" alt="avatar" class="user-avatar">
+                <form>
+                    <div class="submit-comment">
+
+                        <label for="comment" class="comment-wrap">
+                            <textarea name="comment" rows="10" cols="100" id="comment"></textarea>
+                        </label>
+                        <button type="submit" class="send-btn">
+                            <img src="{% static 'assets/img/send-button.png' %}" alt="submit-button">
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <br><br>
+
+            <div>
+                <!-- <div class="reply-comment">
+                   <a class="user-info">
+                       <img src="{% static 'assets/img/user-account.png' %}" alt="avatar" class="user-avatar">
+                       <span>Username</span>
+                   </a>
+                    <div>
+                        <div>
+                            Comment
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reply-comment">
+                    <a class="user-info">
+                        <img src="{% static 'assets/img/user-account.png' %}" alt="avatar" class="user-avatar">
+                        <span>Username</span>
+                    </a>
+                    <div>
+                        <div>
+                            Comment 
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Relate topics:</h3>
+            <table class="relate-topic">
+                <tr>
+                    <th>Name</th>
+                    <th>Field</th>
+                    <th>Replies</th>
+                </tr>
+                <!-- <tr>
+                    <td><a href="#">Topic 1</a></td>
+                    <td>Computer science</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Topic 1</a></td>
+                    <td>Computer science</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Topic 1</a></td>
+                    <td>Computer science</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Topic 1</a></td>
+                    <td>Computer science</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Topic 1</a></td>
+                    <td>Computer science</td>
+                    <td>10</td>
+                </tr> -->
+
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="{% static 'assets/javascript/javascript.js' %}"></script>
+
+</body>
+</html>

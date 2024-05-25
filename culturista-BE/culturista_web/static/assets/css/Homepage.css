@@ -1,0 +1,519 @@
+/*reset css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*các màu dùng nhiều*/
+:root {
+    --text-color: #333;
+    --white-color: #fff;
+    --black--color: #000;
+}
+
+/*slider*/
+
+/*backgr img*/
+#slider__overview {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Adjust as needed */
+}
+
+.slider__3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.1s linear;
+}
+
+/*slider text*/
+.slider__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.slider__img--left,
+.slider__img--right {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+    z-index: 1;
+    width: 1000px;
+}
+
+.slider__img--left {
+    left: 0;
+}
+
+.slider__img--right {
+    right: 0;
+}
+
+.slider__content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    text-align: center;
+    letter-spacing: 2px;
+    z-index: 3;
+    color: #000;
+    transition: transform 0.1s linear;
+}
+
+.slider__h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding: 4px;
+}
+
+.slider__h2{
+    padding: 4px 4px 10px 4px;
+    font-size: 1.2rem;
+}
+
+
+/*block - 4 khối trong slider*/
+.block-list {
+    z-index: 2;
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+.block-item{
+    width: 20%;
+    height: 50vh;
+    border-radius: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    padding: 40px;
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.block-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(207, 77, 77, 0.6), rgba(223, 126, 126, 0)); /* Màu gần trong suốt */
+    border-radius: 24px;
+    opacity: 1;
+    transition: opacity 0.4s ease; /* Transition cho hiệu ứng biến mất */
+}
+
+.block-item:hover::before {
+    opacity: 0; 
+}
+
+.block-item:hover{
+    box-shadow: 20px 20px 30px #00000056;
+    transform: scale(1.03);
+}
+
+.block-item:hover .block-item__text {
+    display: none;
+}
+
+.block-item__text {
+    bottom: 20px;
+    left: 0px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1.3rem;
+    position: absolute;
+    font-weight: bold;
+}
+
+
+/*content*/
+/*introdution*/
+.introdution {
+    display: flex;
+}
+
+.introdution__container {
+    display: flex;
+    padding: 0 0 20px 0;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+.introduction__text {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.introduction__text--header{
+    font-weight: bold;
+    color: red;
+    padding: 0 20px 10px;
+    border-bottom: 1.5px solid red;
+}
+
+.introduction__text--h1{
+    padding:10px 0;
+    width: 80%;
+}
+
+.introduction__text--text{
+    width: 85%;
+    color: #706b6b;
+    padding: 4px 0;
+}
+
+.introduction__img {
+    width: 100%;
+    height: 60vh;
+    border-radius: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    padding: 40px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.introduction__btn--item {
+    justify-content: space-between; 
+    margin: 22px  4px 0 ;
+}
+
+/*about us*/
+.about-us__container {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    height: 800px;
+}
+
+.about-us__head {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    color: red;
+}
+
+.about-us__head::after {
+    content: "";
+    border-bottom: 1.5px solid red;
+    width: 150px;
+    position: absolute;
+    top: 60px;
+    left: 597px;
+}
+
+.about-us__wrap {
+    width: 1200px;
+    max-width: 100%;
+    height: 520px;
+    margin: 30px auto; 
+    border-radius: 20px;
+}
+
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.gallery div img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.gallery__img {
+    max-width: 500px; /* Kích thước lớn nhất cho chiều rộng */
+    max-height: 600px;
+    background-size: cover;
+}
+
+.gallery__item {
+    position: relative;
+    display: flex;
+}
+
+.gallery__name {
+    font-size: 1.2rem;
+    position: absolute;
+    color: #000;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.gallery__item:hover .gallery__name {
+    display: none;
+}
+
+.about-us__nameGr {
+    color: #000;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(240, 234, 234, 0.6);
+}
+
+.gallery {
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+
+.gallery div img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: transform 0.3s;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+#nextBtn,
+#backBtn {
+    width: 50px;
+    height: 50px;
+    margin: 40px;
+    cursor: pointer;
+}
+
+/*footer*/
+.footer__container {
+    height: 250px;
+    margin: 50px 0;
+}
+
+.footer__list {
+    display: flex;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto; 
+    padding: 20px 0;
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+.footer__item {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.3334%;
+}
+
+.item__long {
+    flex: 2;
+}
+
+.item__short1 {
+    flex: 1;
+}
+
+.item__short2 {
+    flex: 1;
+}
+
+.footer__head {
+    padding: 6px 0;
+}
+
+.footer__text {
+    padding: 3px 0;
+    color: var(--text-color);
+}
+
+.footer__link--item{
+    list-style: none;
+    padding: 3px 0;
+}
+
+.footer__link--item:hover a{
+    color: red;
+}
+
+.footer__link--item:hover i{
+    color: var(--black--color);
+}
+
+
+.footer__text--link{
+    color: var(--text-color);
+}
+
+.footer__text--icon {
+    padding: 0 4px 0 0;
+}
+
+.footer__text--name {
+    padding: 4px 0;
+}
+
+.footer__license {
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+    color: red;
+}
+
+
+/* Slider styles for mobile */
+@media only screen and (max-width: 46.1875em) {
+    .slider__content {
+        top: 20%;
+        left: 5%;
+        text-align: center;
+    }
+
+    .slider__h1 {
+        font-size: 2rem;
+    }
+
+    .slider__h2 {
+        font-size: 1rem;
+    }
+
+    .slider__btn {
+        flex-direction: column;
+    }
+
+    .slider__btn--item {
+        margin-bottom: 10px;
+    }
+
+    .block-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .block-item {
+        width: 60%;
+        height: 150px;
+    }
+}
+
+/* Introduction section styles for mobile */
+@media only screen and (max-width: 46.1875em) {
+    .introdution__container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .introduction__text {
+        text-align: center;
+    }
+
+    .introduction__img {
+        height: 40vh;
+        margin-top: 20px;
+    }
+
+    .introduction__btn--item {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* About Us section styles for mobile */
+@media only screen and (max-width: 46.1875em) {
+    .about-us__container {
+        height: auto;
+    }
+
+    .about-us__wrap {
+        width: 100%;
+    }
+
+    .gallery-wrap {
+        flex-direction: column;
+    }
+
+    .gallery {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Footer styles for mobile */
+@media only screen and (max-width: 46.1875em) {
+    .footer__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__item {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer__license {
+        font-size: 0.9rem;
+    }
+}
+
+
